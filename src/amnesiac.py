@@ -1,0 +1,97 @@
+import math
+
+lost_memory = {170368517: ['Y0UDON754Y', '9_FR33D0M8'], 181122056: ['1_L1K3TH4T', 'J0HN__5NOW'],
+               150047755: ['F1ND_NE55Y', '6RUMPY_C47'], 170343949: ['M1N_I_M4X_', 'F1ND_NE55Y'],
+               190028305: ['1_L1K3TH4T', 'WE1L_D0N3_'], 160572438: ['B3L1K3B1LL', '_C0NGR47S5'],
+               160486423: ['9_FR33D0M8', 'CHUKN088IS'], 170247197: ['CHUKN088IS', 'J0HN__5NOW'],
+               160554847: ['CHUKN088IS', 'F1ND_NE55Y'], 161133092: ['M1N_I_M4X_', 'J0HN__5NOW'],
+               160580134: ['M1N_I_M4X_', 'B3L1K3B1LL'], 170709031: ['_Y0UM4DBRO', 'F1ND_NE55Y'],
+               190572587: ['1_H4T3_DF5', '7ROLL_F4CE'], 170916396: ['7ROLL_F4CE', '1_H4T3_DF5'],
+               170074157: ['9_FR33D0M8', 'B3L1K3B1LL'], 190347321: ['Y0UDON754Y', 'J0HN__5NOW'],
+               160794683: ['9_FR33D0M8', '1_H4T3_DF5'], 190778145: ['1_L1K3TH4T', '9_FR33D0M8'],
+               170488387: ['F1ND_NE55Y', 'B3L1K3B1LL'], 170954310: ['7ROLL_F4CE', '_Y0UM4DBRO'],
+               170506315: ['_4_3VER4I_', 'B3L1K3B1LL'], 130052685: ['9_FR33D0M8', '_4_3VER4I_'],
+               170732110: ['K4NG_0UF__', '_9CE_TW1CK'], 190766164: ['_4_3VER4I_', 'WE1L_D0N3_'],
+               190766681: ['7ROLL_F4CE', 'B3L1K3B1LL'], 170213468: ['1_H4T3_DF5', '_4_3VER4I_'],
+               160392294: ['_C0NGR47S5', '_4_3VER4I_'], 160602218: ['WE1L_D0N3_', '_C0NGR47S5'],
+               190677099: ['CHUKN088IS', 'Y0UDON754Y'], 170946670: ['1_L1K3TH4T', 'D0GW0OWFUN'],
+               150073455: ['B3L1K3B1LL', 'M1N_I_M4X_'], 190172273: ['D0GW0OWFUN', 'K4NG_0UF__'],
+               161051763: ['_4_3VER4I_', '_Y0UM4DBRO'], 170367093: ['9_FR33D0M8', 'J0HN__5NOW'],
+               190838391: ['WE1L_D0N3_', '7ROLL_F4CE'], 170412669: ['_4_3VER4I_', '7ROLL_F4CE'],
+               190734613: ['_4_3VER4I_', 'CHUKN088IS'], 170459778: ['J0HN__5NOW', 'Y0UDON754Y'],
+               190649476: ['WE1L_D0N3_', 'F1ND_NE55Y'], 180273942: ['CHUKN088IS', '_9CE_TW1CK'],
+               190760070: ['_Y0UM4DBRO', 'J0HN__5NOW'], 170216584: ['D0GW0OWFUN', '9_FR33D0M8'],
+               140869770: ['J0HN__5NOW', '_9CE_TW1CK'], 150442640: ['R1DD7E4U__', 'F1ND_NE55Y'],
+               170146926: ['WE1L_D0N3_', '6RUMPY_C47'], 170224279: ['K4NG_0UF__', '1_L1K3TH4T'],
+               170404505: ['B3S7_M0DUL', '9_FR33D0M8'], 150411934: ['9_FR33D0M8', 'B3L1K3B1LL'],
+               190573735: ['CHUKN088IS', '1_L1K3TH4T'], 150444208: ['F1ND_NE55Y', 'WE1L_D0N3_'],
+               190189237: ['R1DD7E4U__', '7ROLL_F4CE'], 170285753: ['7ROLL_F4CE', 'D0GW0OWFUN'],
+               170992828: ['CHUKN088IS', 'B3S7_M0DUL'], 190620349: ['6RUMPY_C47', '9_FR33D0M8'],
+               170366144: ['M1N_I_M4X_', '_Y0UM4DBRO'], 170182337: ['1_H4T3_DF5', 'D0GW0OWFUN'],
+               170442529: ['K4NG_0UF__', 'CHUKN088IS'], 170253006: ['Y0UDON754Y', 'CHUKN088IS'],
+               170364117: ['_Y0UM4DBRO', '1_L1K3TH4T'], 190038751: ['_C0NGR47S5', 'WE1L_D0N3_'],
+               151006445: ['7ROLL_F4CE', '1_H4T3_DF5'], 190875374: ['1_H4T3_DF5', '9_FR33D0M8'],
+               170793199: ['R1DD7E4U__', '_4_3VER4I_'], 170904304: ['CHUKN088IS', '6RUMPY_C47'],
+               190707330: ['J0HN__5NOW', 'F1ND_NE55Y'], 160426234: ['Y0UDON754Y', 'R1DD7E4U__'],
+               190005502: ['K4NG_0UF__', 'F1ND_NE55Y'], 190592769: ['M1N_I_M4X_', '_Y0UM4DBRO'],
+               170448130: ['B3L1K3B1LL', 'F1ND_NE55Y'], 170479363: ['WE1L_D0N3_', 'F1ND_NE55Y'],
+               170928388: ['6RUMPY_C47', '_C0NGR47S5'], 150049542: ['B3S7_M0DUL', '1_H4T3_DF5'],
+               190084873: ['_4_3VER4I_', '9_FR33D0M8'], 190203706: ['6RUMPY_C47', 'F1ND_NE55Y'],
+               181044334: ['Y0UDON754Y', 'WE1L_D0N3_'], 190583055: ['1_H4T3_DF5', 'F1ND_NE55Y'],
+               190517522: ['CHUKN088IS', '1_H4T3_DF5'], 160205075: ['J0HN__5NOW', 'D0GW0OWFUN'],
+               170465045: ['CHUKN088IS', 'R1DD7E4U__'], 160497430: ['D0GW0OWFUN', '6RUMPY_C47'],
+               170434328: ['_C0NGR47S5', '6RUMPY_C47'], 190262046: ['1_H4T3_DF5', 'WE1L_D0N3_'],
+               161137953: ['_4_3VER4I_', 'K4NG_0UF__'], 170172202: ['_C0NGR47S5', '1_H4T3_DF5'],
+               170639668: ['_Y0UM4DBRO', '9_FR33D0M8'], 190536501: ['6RUMPY_C47', 'M1N_I_M4X_'],
+               190561673: ['F1ND_NE55Y', '1_L1K3TH4T'], 161125684: ['B3L1K3B1LL', '9_FR33D0M8'],
+               170434362: ['6RUMPY_C47', '9_FR33D0M8'], 170407562: ['K4NG_0UF__', 'F1ND_NE55Y'],
+               170219839: ['_9CE_TW1CK', '1_L1K3TH4T'], 190759775: ['D0GW0OWFUN', 'M1N_I_M4X_'],
+               190385633: ['CHUKN088IS', '_9CE_TW1CK'], 170180425: ['_Y0UM4DBRO', 'M1N_I_M4X_'],
+               170747723: ['J0HN__5NOW', '_4_3VER4I_'], 170984786: ['_4_3VER4I_', 'M1N_I_M4X_'],
+               170496854: ['R1DD7E4U__', 'B3S7_M0DUL'], 170238298: ['D0GW0OWFUN', '_9CE_TW1CK'],
+               170980700: ['M1N_I_M4X_', 'Y0UDON754Y'], 170205533: ['1_H4T3_DF5', '7ROLL_F4CE'],
+               190649694: ['D0GW0OWFUN', 'B3S7_M0DUL'], 170226527: ['9_FR33D0M8', 'J0HN__5NOW'],
+               190789473: ['D0GW0OWFUN', '_9CE_TW1CK'], 160557413: ['R1DD7E4U__', '1_H4T3_DF5'],
+               161107303: ['7ROLL_F4CE', '1_L1K3TH4T'], 160436082: ['CHUKN088IS', '_Y0UM4DBRO'],
+               190188920: ['9_FR33D0M8', 'B3L1K3B1LL'], 140368985: ['CHUKN088IS', 'M1N_I_M4X_'],
+               190635387: ['M1N_I_M4X_', '_Y0UM4DBRO'], 170346364: ['K4NG_0UF__', '1_H4T3_DF5'],
+               170788737: ['B3S7_M0DUL', 'WE1L_D0N3_'], 170049926: ['K4NG_0UF__', 'WE1L_D0N3_'],
+               160365449: ['7ROLL_F4CE', 'Y0UDON754Y'], 170467212: ['7ROLL_F4CE', 'B3S7_M0DUL'],
+               170111887: ['J0HN__5NOW', 'CHUKN088IS'], 190735252: ['K4NG_0UF__', 'B3S7_M0DUL'],
+               160446874: ['1_L1K3TH4T', '6RUMPY_C47'], 170294685: ['B3L1K3B1LL', 'F1ND_NE55Y'],
+               190583712: ['7ROLL_F4CE', '_C0NGR47S5'], 160951714: ['6RUMPY_C47', 'CHUKN088IS'],
+               190758309: ['J0HN__5NOW', 'D0GW0OWFUN'], 160166824: ['M1N_I_M4X_', '7ROLL_F4CE'],
+               170434889: ['_C0NGR47S5', '_9CE_TW1CK'], 170906559: ['D0GW0OWFUN', 'B3S7_M0DUL'],
+               170279361: ['9_FR33D0M8', 'R1DD7E4U__'], 170276290: ['_C0NGR47S5', 'M1N_I_M4X_'],
+               170219976: ['9_FR33D0M8', 'M1N_I_M4X_'], 170252238: ['6RUMPY_C47', 'J0HN__5NOW'],
+               181004877: ['9_FR33D0M8', 'WE1L_D0N3_'], 190602194: ['R1DD7E4U__', 'B3L1K3B1LL'],
+               190705107: ['6RUMPY_C47', 'K4NG_0UF__'], 170205658: ['K4NG_0UF__', '_Y0UM4DBRO'],
+               130785761: ['_C0NGR47S5', '9_FR33D0M8'], 190620132: ['9_FR33D0M8', 'F1ND_NE55Y'],
+               170281456: ['B3L1K3B1LL', 'B3S7_M0DUL'], 190227953: ['1_L1K3TH4T', 'D0GW0OWFUN'],
+               170469881: ['_4_3VER4I_', '_Y0UM4DBRO']}
+
+
+def score_function(string_one, string_two):
+    """
+
+        """
+    score = 0
+    for i, j in zip(string_one, string_two):
+        score += math.sqrt(abs(ord(i) - ord(j)))
+
+    return score
+
+
+MAX_VALUE = score_function('0000000000', '__________')
+
+
+def blurry_memory(list_of_password, student_number, index):
+    """
+
+        """
+    ordered_dict = dict()
+    password_to_find = lost_memory[student_number][index]
+    for password in list_of_password:
+        ordered_dict[password] = 1 - score_function(password, password_to_find) / MAX_VALUE
+
+    return ordered_dict

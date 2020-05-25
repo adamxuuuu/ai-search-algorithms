@@ -1,0 +1,13 @@
+Hello!
+Please install matplotlib and networkx
+put amnesiac.pyc in the _pycache_ folder
+open terminal in the src directory
+----------------------Exercise 1-----------------------
+type in terminal:
+python ex1
+----------------------Exercise 2-----------------------
+type in terminal:
+examples:
+python ex2 0 100 (crack first password 100 times)
+python ex2 1 20 (crack second password 20 times)
+python ex2 (crack first password 1 time)
